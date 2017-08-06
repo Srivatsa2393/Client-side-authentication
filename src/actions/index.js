@@ -14,6 +14,8 @@ export function signInUser({ email, password }){
         //update a state to indicate the user is authenticated
         dispatch({ type: AUTH_USER });
         //Save the JWT token
+        //We can save the JWT token in local storage
+        localStorage.setItem('token', response.data.token);
         //redirect to the route '/feature'
         //use react router for navigation
         browserHistory.push('/feature');
