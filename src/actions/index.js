@@ -44,3 +44,11 @@ export function signoutUser(){
     type: UNAUTH_USER
   };
 }
+
+
+export function signupUser({ email, password}) {
+  //again we use redux thunk
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/signup`, { email, password })
+  }
+}
